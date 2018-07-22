@@ -60,6 +60,39 @@ declare global {
   }
 }
 
+
+declare global {
+
+  namespace StencilComponents {
+    interface ProgressComponent {
+      'message': string;
+    }
+  }
+
+  interface HTMLProgressComponentElement extends StencilComponents.ProgressComponent, HTMLStencilElement {}
+
+  var HTMLProgressComponentElement: {
+    prototype: HTMLProgressComponentElement;
+    new (): HTMLProgressComponentElement;
+  };
+  interface HTMLElementTagNameMap {
+    'progress-component': HTMLProgressComponentElement;
+  }
+  interface ElementTagNameMap {
+    'progress-component': HTMLProgressComponentElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'progress-component': JSXElements.ProgressComponentAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ProgressComponentAttributes extends HTMLAttributes {
+      'message'?: string;
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }
 
 export declare function defineCustomElements(window: any): void;

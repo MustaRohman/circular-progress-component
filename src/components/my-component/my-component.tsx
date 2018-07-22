@@ -13,7 +13,7 @@ export class MyComponent {
   render() {
     return (
       <div>
-        Hello, World! I'm {this.first} {this.last}
+        <progress-component></progress-component>
       </div>
     );
   }
